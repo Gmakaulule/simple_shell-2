@@ -3,9 +3,9 @@
 /**
  * main - Entry point.
  * @argc: The number of arguments passed throug
- * command propt. 
- * @argv: input commands.
- * Return: Always 0.
+ * command propt
+ *@argv: input commands.
+ * Return: Always 0
  */
 int main(__attribute__((unused)) int argc, char **argv)
 {
