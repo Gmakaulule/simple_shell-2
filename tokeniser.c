@@ -35,7 +35,7 @@ void parse_line(char *line, size_t size, int command_num, char **av)
 		single_free(2, param_array, line);
 	}
 	else
-		exit_b(line);
+		exit_shell(line);
 }
 
 /**

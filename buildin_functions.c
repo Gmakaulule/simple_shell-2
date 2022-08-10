@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * cd_b - Changes the current working directory to the parameter passed to cd.
+ * chd - Changes the current working directory to the parameter passed to cd.
  * if no parameter is passed it will change directory to HOME.
  * @line: A string representing the input from the user.
  */
-void _cd(char *line)
+void chd(char *line)
 {
 	int index;
 	int token_num;
@@ -33,10 +33,10 @@ void _cd(char *line)
 }
 
 /**
- * env_b - Prints all the environmental variables in the current shell.
+ * enviro - Prints all the environmental variables in the current shell.
  * @line: A string representing the input from the user.
  */
-void _env(__attribute__((unused))char *line)
+void enviro(__attribute__((unused))char *line)
 {
 	int i;
 	int j;
@@ -50,10 +50,10 @@ void _env(__attribute__((unused))char *line)
 }
 
 /**
- * exit_b - Exits the shell. After freeing allocated resources.
+ * exit_shell - Exits the shell. After freeing allocated resources.
  * @line: A string representing the input from the user.
  */
-void exit_b(char *line)
+void exit_shell(char *line)
 {
 	free(line);
 	print_str("\n", 1);
@@ -70,9 +70,9 @@ void (*check_built_ins(char *str))(char *str)
 	int i;
 
 	builtin_t buildin[] = {
-		{"exit", exit_b},
-		{"env", _env},
-		{"cd", _cd},
+		{"exit", exit_shell},
+		{"env", enviro},
+		{"cd", chd},
 		{NULL, NULL}
 	};
 
